@@ -15,11 +15,11 @@ def histogram(points, bins):
         
         if point < bin_start:
             point_idx += 1
-        elif bin_start < point <= bin_end:
+        elif bin_start <= point < bin_end:
             count = 0
             temp_idx = point_idx
             
-            while temp_idx < n and bins[bin_idx][0] < points[temp_idx] <= bins[bin_idx][1]:
+            while temp_idx < n and bins[bin_idx][0] <= points[temp_idx] < bins[bin_idx][1]:
                 count += 1
                 temp_idx += 1
             
